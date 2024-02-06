@@ -1,0 +1,50 @@
+getwd()
+setwd("C:/Users/kagir/OneDrive/Documents/My Documents/UEL/Projects")
+
+require(tidyverse)
+require(sf)
+require(ggplot2)
+require(maps)
+require(raster)
+require(rgdal)
+require(rgeos)
+require(dplyr)
+require(knitr)
+
+ckenya <- read_sf("C:/Users/kagir/OneDrive/Documents/My Documents/UEL/Projects/Henya Healthcare Project R/Data/kenya_health.shp")
+facilities <- filter(ckenya, PROV == "CENTRAL" | PROV == "NAIROBI")  %>% st_transform(7761)
+
+facilities_centroids <- facilities%>%st_centroid()
+
+Map <- read_sf("C:/Users/kagir/OneDrive/Documents/My Documents/UEL/Projects/Henya Healthcare Project R/Data/Population_HH_2016.shp")
+
+Central_Border <- filter(Map, FIRST_PROV == "CENTRAL" | FIRST_PROV == "NAIROBI")
+Central_Border %>% ggplot() + geom_sf() + 
+  geom_sf(data = facilities, color  = 'blue') + 
+  theme_classic()
+
+Central_Unified <- filter(Map, FIRST_PROV == "CENTRAL" | FIRST_PROV == "NAIROBI") %>% st_union()
+
+Central_Unified %>% ggplot() + geom_sf()+
+  geom_sf(data = facilities, color = ifelse(facilities$F_TYPE <= 1,'red','pink')) + 
+  theme_classic()
+
+Metro <- filter(Map, County == "Nairobi" | County == "Kiambu") %>% st_union()
+
+Metro %>% ggplot() + geom_sf()+
+  geom_sf(data = facilities, color = ifelse(facilities$F_TYPE <= 1,'red','pink')) + 
+  theme_classic()
+
+facilities_Nai_Kiambu <- facilities %>% filter( DIST == "KIAMBU" | DIST == "NAIROBI")
+table1 <- as.data.frame(subset(facilities_Nai_Kiambu, F_TYPE == 2|F_TYPE == 1,
+                               select = c("F_NAME", "DIVISION", "AGENCY")))
+
+kable(table1, caption = "Tier 1 Hospitals in Kiambu and Nairobi", )
+
+Ke_Demography <- read_sf("C:/Users/kagir/OneDrive/Documents/My Documents/UEL/Projects/Henya Healthcare Project R//Data/Population_HH_2016.shp")
+
+Central_Density <- filter(Ke_Demography, County == "Kiambu" | County == "Nairobi") %>% st_transform(7761)
+Central_Density %>% ggplot() +
+  geom_sf (aes (fill= Population), col=NA) +
+  scale_fill_gradient(low="#ccece9", high="dark green", trans = "log") +
+  theme_classic()

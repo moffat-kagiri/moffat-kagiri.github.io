@@ -1,0 +1,369 @@
+#Import Libraries for Predictive Modelling
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+import scipy
+import sklearn
+import seaborn as sns
+
+from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import confusion_matrix, classification_report
+from sklearn.metrics import roc_curve, auc, roc_auc_score, RocCurveDisplay
+from sklearn.linear_model import LogisticRegression
+from sklearn.cluster import KMeans
+
+#Import Dataset
+raw =pd.read_csv("C:/Users/kagir/OneDrive/Desktop/online_shoppers_intention.csv")
+
+#Get Descriptive Statistics for the Dataset
+raw.describe()
+#Get a count of the missing values
+mv=raw.isnull().sum()
+mv
+
+#Plot the percentage of customers who have brought revenue
+sns.set_palette('Paired_r')
+sns.set_style("darkgrid")
+plt.figure(figsize=(8,5))
+total = float(len(raw))
+ax = sns.countplot(x="Revenue", data=raw)
+for p in ax.patches:
+  percentage = '{:.1f}%'.format(100 * p.get_height()/total)
+  x = p.get_x() + p.get_width()
+  y = p.get_height()
+  ax.annotate(percentage, (x,y), ha='center')
+plt.show()
+
+#Distribution of Visitor Type
+raw['VisitorType'].value_counts()
+sns.set_palette("Paired")
+plt.figure(figsize=(8,5))
+total = float(len(raw))
+ax = sns.countplot(x="VisitorType", data=raw)
+for p in ax.patches:
+  percentage = '{:.1f}%'.format(100 * p.get_height()/total)
+  x = p.get_x() + p.get_width()
+  y = p.get_height()
+  ax.annotate(percentage, (x, y), ha= 'center')
+plt.show()
+
+#Distribution of Visitor Type Over the Weekend
+x,y = 'VisitorType', 'Weekend'
+df1 = raw.groupby(x)[y].value_counts(normalize=True)
+df1 = df1.mul(100)
+df1 = df1.rename('percent').reset_index()
+g = sns.catplot(x=x,y='percent',hue=y,kind='bar',data=df1)
+g.ax.set_ylim(0,100)
+for p in g.ax.patches: 
+  txt = str(p.get_height().round(2)) + '%' 
+  txt_x = p.get_x()
+  txt_y = p.get_height()
+  g.ax.text(txt_x,txt_y,txt)
+plt.show()
+
+#Distribution of Revenue for different Traffic Types
+x, y='TrafficType', 'Revenue'
+df2 = raw.groupby(x)[y].value_counts(normalize=True)
+df2 = df2.mul(100)
+df2 = df2.rename('percent').reset_index()
+g = sns.catplot(x=x,y='percent',hue=y,kind='bar',data=df2)
+g.ax.set_ylim(0,100)
+for p in g.ax.patches:
+  txt = str(p.get_height().round(2)) + '%'
+  txt_x = p.get_x()
+  txt_y = p.get_height()
+  g.ax.text(txt_x,txt_y,txt)
+plt.show()
+
+#Distribution of Customers based on Different Traffic Type Codes
+sns.set_palette('cubehelix')
+sns.set_style("darkgrid")
+plt.hist(raw['TrafficType'])
+plt.title('Distribution of diff Traffic',fontsize = 30)
+plt.xlabel('TrafficType Codes', fontsize = 15)
+plt.ylabel('Count', fontsize = 15)
+plt.show()
+#Distribution of Customers based on Region Codes
+plt.hist(raw['Region'])
+plt.title('Distribution of Customers',fontsize = 30)
+plt.xlabel('Region Codes', fontsize = 15)
+plt.ylabel('Count', fontsize = 15)
+plt.show()
+#Distribution of Customers over OperatingSystems
+plt.hist(raw['OperatingSystems'])
+plt.title('Distribution of Customers',fontsize = 30)
+plt.xlabel('OperatingSystems', fontsize = 15)
+plt.ylabel('Count', fontsize = 15)
+plt.show()
+#Distribution of Customers over Months
+plt.hist(raw['Month'])
+plt.title('Distribution of Customers',fontsize = 30)
+plt.xlabel('Month', fontsize = 15)
+plt.ylabel('Count', fontsize = 15)
+plt.show()
+#Distribution of Pagevalues over Revenue
+sns.set_palette('cubehelix')
+sns.set_style("darkgrid")
+sns.stripplot(x='Revenue', y='PageValues', data = raw)
+plt.show()
+#Revenue over BounceRates
+sns.set_palette('cubehelix')
+sns.set_style("darkgrid")
+sns.stripplot(x='Revenue', y='BounceRates', data = raw)
+plt.show()
+#Distribution of TrafficType over Revenue
+sns.set_style("ticks")
+sns.set_palette("Set2")
+df = pd.crosstab(raw['TrafficType'], raw['Revenue'])
+df.div(df.sum(1).astype(float), axis = 0).plot(kind = 'bar', stacked = True)
+plt.title('Traffic Type vs Revenue', fontsize = 30)
+plt.show()
+#Distribution of Region over Revenue
+sns.set_palette('cubehelix')
+sns.set_style("darkgrid")
+ax4 = sns.countplot(x="Region", hue="Revenue", data=raw)
+plt.show()
+
+#Linear Regression plot between Administrative and Informational
+sns.lmplot(x = 'Administrative', y = 'Informational', data = raw, x_jitter = 0.05)
+plt.show()
+#Multi-variate analysis: Month vs Pagevalues wrt Revenue
+sns.boxplot(x = raw['Month'], y = raw['PageValues'], hue = raw['Revenue'], palette = 'inferno')
+plt.title('Mon. vs PageValues w.r.t. Rev.', fontsize = 30)
+plt.show()
+
+#month vs bouncerates wrt revenue
+sns.boxplot(x = raw['Month'], y = raw['BounceRates'], hue = raw['Revenue'], palette = 'Oranges')
+plt.title('Mon. vs BounceRates w.r.t. Rev.', fontsize = 30)
+plt.show()
+#visitor type vs exit rates w.r.t revenue
+sns.boxplot(x = raw['VisitorType'], y = raw['BounceRates'], hue = raw['Revenue'], palette = 'Purples')
+plt.title('Visitors vs ExitRates w.r.t. Rev.', fontsize = 30)
+plt.show()
+
+# checking the no. of null values in data after imputing the missing value
+raw.fillna(0, inplace = True)
+raw.isnull().sum().sum()
+
+##Cluster Analysis
+#Elbow method is a graph between WCSS and No.of Clusters.
+# preparing the dataset and checking the shape
+x = raw.iloc[:, [1, 6]].values
+x.shape
+wcss = []
+for i in range(1, 11):
+  km = KMeans(n_clusters=i,init='k-means++',max_iter=300,n_init=10,random_state=0,
+              algorithm='lloyd',tol = 0.001)
+  km.fit(x)
+  labels = km.labels_
+  wcss.append(km.inertia_)
+plt.rcParams['figure.figsize'] = (15, 7)
+plt.plot(range(1, 11), wcss)
+plt.grid()
+plt.tight_layout()
+plt.title('The Elbow Method', fontsize = 20)
+plt.xlabel('No. of Clusters')
+plt.ylabel('wcss')
+plt.show()
+
+#The maximum bend is at third index, that is the number of Optimal no. of Clusters for 
+# Adminstrative Duration and Revenue is Three. 
+# plotting the clusters
+km = KMeans(n_clusters = 3, init = 'k-means++', max_iter = 300, n_init = 10, random_state = 0)
+y_means = km.fit_predict(x)
+plt.scatter(x[y_means == 0, 0], x[y_means == 0, 1], s = 100, c = 'red', label = 'Un-interested Customers')
+plt.scatter(x[y_means == 1, 0], x[y_means == 1, 1], s = 100, c = 'yellow', label = 'General Customers')
+plt.scatter(x[y_means == 2, 0], x[y_means == 2, 1], s = 100, c = 'green', label = 'Target Customers')
+plt.scatter(km.cluster_centers_[:,0], km.cluster_centers_[:, 1], s = 50, c = 'blue' , label = 'centeroid')
+plt.title('Administrative Duration vs Duration', fontsize = 20)
+plt.grid()
+plt.xlabel('Administrative Duration')
+plt.ylabel('Bounce Rates')
+plt.legend()
+plt.show()
+
+# informational duration vs Bounce Rates
+x = raw.iloc[:, [3, 6]].values
+wcss = []
+for i in range(1, 11):
+  km = KMeans(n_clusters = i, init = 'k-means++', max_iter = 300, n_init = 10,
+              random_state = 0, algorithm = 'elkan', tol = 0.001)
+  km.fit(x)
+  labels = km.labels_
+  wcss.append(km.inertia_)
+plt.rcParams['figure.figsize'] = (12, 5)
+plt.plot(range(1, 11), wcss)
+plt.grid()
+plt.tight_layout()
+plt.title('The Elbow Method', fontsize = 20)
+plt.xlabel('No. of Clusters')
+plt.ylabel('wcss')
+plt.show()
+
+km = KMeans(n_clusters = 2, init = 'k-means++', max_iter = 300, n_init = 10, random_state = 0)
+y_means = km.fit_predict(x)
+plt.scatter(x[y_means == 0, 0], x[y_means == 0, 1], s = 100, c = 'red', label = 'Un-interested Customers')
+plt.scatter(x[y_means == 1, 0], x[y_means == 1, 1], s = 100, c = 'yellow', label = 'Target Customers')
+plt.scatter(km.cluster_centers_[:,0], km.cluster_centers_[:, 1], s = 50, c = 'blue' , label = 'centeroid')
+plt.title('Informational Duration vs Bounce Rates', fontsize = 20)
+plt.grid()
+plt.xlabel('Informational Duration')
+plt.ylabel('Bounce Rates')
+plt.legend()
+plt.show()
+
+# Region vs Traffic Type
+x = raw.iloc[:, [13, 14]].values
+wcss = []
+for i in range(1, 11):
+  km = KMeans(n_clusters = i, init = 'k-means++', max_iter = 300, n_init = 10, random_state = 0,
+              algorithm = 'elkan', tol = 0.001)
+  km.fit(x)
+  labels = km.labels_
+  wcss.append(km.inertia_)
+plt.rcParams['figure.figsize'] = (12, 5)
+plt.plot(range(1, 11), wcss)
+plt.grid()
+plt.tight_layout()
+plt.title('The Elbow Method', fontsize = 20)
+plt.xlabel('No. of Clusters')
+plt.ylabel('wcss')
+plt.show()
+
+km = KMeans(n_clusters = 2, init = 'k-means++', max_iter = 300, n_init = 10, random_state = 0)
+y_means = km.fit_predict(x)
+plt.scatter(x[y_means == 0, 0], x[y_means == 0, 1], s = 100, c = 'red', label = 'Un-interested Customers')
+plt.scatter(x[y_means == 1, 0], x[y_means == 1, 1], s = 100, c = 'yellow', label = 'Target Customers')
+plt.scatter(km.cluster_centers_[:,0], km.cluster_centers_[:, 1], s = 50, c = 'blue' , label = 'centeroid')
+plt.title('Region vs Traffic Type', fontsize = 20)
+plt.grid()
+plt.xlabel('Region')
+plt.ylabel('Traffic')
+plt.legend()
+plt.show()
+
+#Data Preprocessing to build Random Forest classifier and Logistic Regression
+# one hot encoding
+data1 = pd.get_dummies(raw)
+data1.columns
+le = LabelEncoder()
+raw['Revenue'] = le.fit_transform(raw['Revenue'])
+raw['Revenue'].value_counts()
+# getting dependent and independent variables
+x=data1
+# removing the target column revenue from 
+x = x.drop(['Revenue'], axis = 1)
+y = data1['Revenue']
+# checking the shapes
+print("Shape of x:", x.shape, "Shape of y:", y.shape)
+#Splitting the data between train and test sets
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.3, random_state = 0)
+# checking the shape
+print("Shape of x_train :", x_train.shape, "Shape of y_train :", y_train.shape)
+print("Shape of x_test :", x_test.shape, "Shape of y_test :", y_test.shape)
+
+#RandomForest classifier model Building
+# MODELLING
+rfmodel = RandomForestClassifier()
+rfmodel.fit(x_train, y_train)
+y_pred = rfmodel.predict(x_test)
+
+# evaluating the model
+print("Training Accuracy :", rfmodel.score(x_train, y_train))
+print("Testing Accuracy :", rfmodel.score(x_test, y_test))
+
+#Confusion Matrix.
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 6), sharey=False)
+cm = confusion_matrix(y_test, y_pred)
+sns.heatmap(cm, ax=ax1, annot=True)
+ax1.set_title('Confusion Matrix 1')
+ax1.set(xlabel='Predicted Label', ylabel='True Label')
+
+cm2 = confusion_matrix(y, rfmodel.predict(x))
+ax2.imshow(cm2)
+ax2.grid(False)
+ax2.set_title('Confusion Matrix 2')
+ax2.xaxis.set(ticks=(0, 1), ticklabels=('Predicted 0s', 'Predicted 1s'))
+ax2.yaxis.set(ticks=(0, 1), ticklabels=('Actual 0s', 'Actual 1s'))
+ax2.set_ylim(1.5, -0.5)
+for i in range(2):
+  for j in range(2):
+    ax2.text(j, i, cm2[i, j], ha='center', va='center', color='red')
+fig.tight_layout()
+plt.show()
+# classification report
+cr = classification_report(y_test, y_pred)
+print(cr)
+
+##Plot the ROC for RandomForest
+# Calculate the ROC curve
+y_scores = rfmodel.predict_proba(x_test)[:, 1]
+rf_fpr, rf_tpr, _ = roc_curve(y_test, y_scores)
+rf_auc = roc_auc_score(y_test, y_scores)
+# Plot the curve
+plt.plot(rf_fpr, rf_tpr, label='Random Forest (auc = %0.3f)' % rf_auc)
+plt.legend()
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('ROC Curve for Random Forest')
+plt.show()
+#Saving the predictions as a dataframe
+df=pd.DataFrame(y_pred,columns=["Revenue"])
+df
+
+#Building a logistic regression model
+##MODELLING
+lrmodel = LogisticRegression(solver="liblinear", random_state=0)
+lrmodel.fit(x_train, y_train)
+y_pred1 = lrmodel.predict(x_test)
+
+#Confusion Matrix.
+fig, (ax3, ax4) = plt.subplots(1, 2, figsize=(12, 6), sharey=False)
+cml = confusion_matrix(y_test, y_pred1)
+sns.heatmap(cml, ax=ax3, annot=True)
+ax3.set_title('Confusion Matrix 1')
+ax3.set(xlabel='Predicted Label', ylabel='True Label')
+
+cml2 = confusion_matrix(y, lrmodel.predict(x))
+ax4.imshow(cml2)
+ax4.grid(False)
+ax4.set_title('Confusion Matrix 2')
+ax4.xaxis.set(ticks=(0, 1), ticklabels=('Predicted 0s', 'Predicted 1s'))
+ax4.yaxis.set(ticks=(0, 1), ticklabels=('Actual 0s', 'Actual 1s'))
+ax4.set_ylim(1.5, -0.5)
+for i in range(2):
+  for j in range(2):
+    ax4.text(j, i, cml2[i, j], ha='center', va='center', color='red')
+fig.tight_layout()
+plt.show()
+
+# classification report
+cr1 = classification_report(y_test, y_pred1)
+print(cr1)
+
+##Plot the ROC for Logistic Regression
+# Calculate the ROC curve
+y_scores1 = lrmodel.predict_proba(x_test)[:, 1]
+logit_fpr, logit_tpr, _ = roc_curve(y_test, y_scores1)
+lr_auc = roc_auc_score(y_test, y_scores1)
+# Plot the curve
+plt.plot(rf_fpr, rf_tpr, label='Logistic Regression (auc = %0.3f)' % lr_auc)
+plt.legend()
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('ROC Curve for Logistic Regression')
+plt.show()
+#Saving the predictions as a dataframe
+df3=pd.DataFrame(y_pred1,columns=["Revenue"])
+df3
+
+#Plotting ROC curve for both Random Forest and Logistic Regression
+plt.plot(logit_fpr, logit_tpr, label='Logistic (auc = %0.3f)' % lr_auc) 
+plt.plot(rf_fpr, rf_tpr, label='Random Forest (auc = %0.3f)' % rf_auc)
+plt.legend()
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('ROC Curve Comparison')
+plt.show()
