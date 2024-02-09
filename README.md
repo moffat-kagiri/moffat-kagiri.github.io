@@ -1,4 +1,4 @@
-Moffat Kagiri Portfolio
+#Moffat Kagiri Portfolio
 
 This is the GitHub Pages portfolio website for Moffat Kagiri. It includes:
 
@@ -7,10 +7,10 @@ Sample projects with descriptions
 Blog post summaries
 Resume/CV
 
-Usage
+##Usage
 The website is built using Jekyll and published through GitHub Pages.
 
-To run locally:
+##To run locally:
 Install Jekyll and dependencies bundle install
 Start the Jekyll server bundle exec jekyll serve
 View at http://localhost:4000
@@ -18,7 +18,8 @@ To publish:
 
 Push changes to the master branch of the repository
 The GitHub Pages site will rebuild automatically
-Customizing
+
+##Customizing
 Most customizations can be done in _config.yml:
 
 Site details like title, description, URL
@@ -29,7 +30,7 @@ The Minima theme is used for styling and layout. You can modify or override any 
 
 The main content pages are in the /_pages/ folder. New pages can be added by creating new HTML or Markdown files.
 
-Credits
+##Credits
 Jekyll for core site generation
 Minima theme for styling
 GitHub Pages for hosting
