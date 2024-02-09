@@ -1,0 +1,30 @@
+# Site settings
+title: Moffat Kagiri Portfolio 
+description: A portfolio website for Moffat Kagiri
+baseurl: "" 
+url: "https://username.github.io"
+
+# Author details
+author:
+  name: Moffat Kagiri
+  email: kagirimoffat@outlook.com
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+
+# Exclude files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+
+# Set default front matter values
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Moffat Kagiri"
