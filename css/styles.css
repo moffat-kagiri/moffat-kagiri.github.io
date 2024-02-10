@@ -54,7 +54,9 @@ body {
   }
   .header-content h2{
     font-size: xx-large;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     text-align: justify;
+    
   }
   
   section {
