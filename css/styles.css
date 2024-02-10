@@ -4,7 +4,7 @@ body {
     background-color: rgb(0 0 0/ 60%);
     color: rgb(0 0 0);
     text-align: -webkit-center;
-    background-image: url('/assets/background4.jpg'); 
+    /* background-image: url('/assets/background4.jpg'); */
     background-size: cover; 
     background-position: center; 
     background-blend-mode: soft-light; 
@@ -56,7 +56,7 @@ body {
     font-size: xx-large;
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     text-align: justify;
-    
+
   }
   
   section {
@@ -149,19 +149,6 @@ body {
   }
   
   /* Projects styles */
-  body {
-    background-color: rgb(0 0 0/ 60%);
-    color: rgb(0 0 0);
-    text-align: -webkit-center;
-    /* background-image: url('/assets/background4.jpg'); */
-    background-size: cover; 
-    background-position: center; 
-    background-blend-mode: soft-light; 
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    margin: 0;
-  }
 
   header {
     background-color: rgb(0 125 0 / 20%);
@@ -286,20 +273,6 @@ body {
   }
 
   /* Reviews styles */  
-  body {
-    background-color: rgb(0 0 0/ 60%);
-    color: rgb(0 0 0);
-    text-align: -webkit-center;
-    /* background-image: url('/assets/background4.jpg'); */
-    background-size: cover; 
-    background-position: center; 
-    background-blend-mode: soft-light; 
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    margin: 0;
-  }
-
   header {
     background-color: rgb(0 125 0 / 20%);
     color: rgb(0 0 0);
