@@ -19,6 +19,7 @@
       </div>
     </header>
 
+    <h2>Projects</h2>
     <section id="projects">
       
       <div class="project project1">
@@ -97,6 +98,7 @@
         </div>
     </section>
 
+    <h2>Reviews</h2>
     <section id="reviews">
 
       <p class="paragraph-text">
@@ -106,19 +108,25 @@
       <!-- Blog Previews -->
       <div class="blog-preview" onclick="window.location.href = 'blog1.html'">
           <h2>Reiews Coming Soon...</h2>
-          <p>First 70 characters of the blog post content go here...</p>
+          <p> 
+
+          </p>
           <div class="timestamp">01.01.2023 12:00 PM</div>
       </div>
       
       <div class="blog-preview" onclick="window.location.href = 'blog2.html'">
           <h2>Reviews Coming Soon...</h2>
-          <p>First 70 characters of the blog post content go here...</p>
-          <div class="timestamp">02.01.2023 02:30 PM</div>
+          <p>
+            
+          </p>
+          <div class="timestamp">02.01.2023</div>
       </div>
       
       <div class="blog-preview" onclick="window.location.href = 'blog3.html'">
           <h2>Reviews Coming Soon...</h2>
-          <p>First 70 characters of the blog post content go here...</p>
+          <p>
+            
+          </p>
           <div class="timestamp">03.01.2023 09:45 AM</div>
       </div>
       
@@ -126,6 +134,7 @@
 
     </section>
 
+    <h2>Curriculum Vitae</h2>
     <section id="cv">
 
       <object data="/assets/CV.pdf" type="application/pdf" width="80%" height="600px"> </object>
@@ -134,6 +143,7 @@
 
     </section>
 
+    <h2>About Me</h2>
     <section id="about">
 
       <div class="about-content">
@@ -163,6 +173,7 @@
           </ul>
         </p>
       </div>
+
       <div class="contact-icons">
         <a href="https://github.com/moffat-kagiri" target="_blank">
         <img src="/assets/github.svg" alt="Github Logo" width="48" height="48">
@@ -180,8 +191,8 @@
     </section>
     
     <script>
-      function scrollToSection(sectionId) {
-        document.querySelector(`#${sectionId}`).scrollIntoView({behavior: "smooth"});
+      function scrollToSection(sectionId){
+      document.querySelector(`#${sectionId}`).scrollIntoView({behavior: "smooth"});
       } 
       async function expandProject(projectId) {
         const projectElement = document.querySelector(`.${projectId}`);
