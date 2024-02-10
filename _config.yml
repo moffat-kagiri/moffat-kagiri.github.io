@@ -18,8 +18,8 @@ plugins:
 # Exclude files
 exclude:
   - Gemfile
-  - Gemfile.lock
   - README.md
+  - Gemfile.lock
   - LICENSE
 
 # Set default front matter values
