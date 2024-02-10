@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="portfolio.css">
 </head>
 
 <body>
@@ -96,6 +96,9 @@
         <button class="read-more-button" onclick="showPdfAndCodePreview('project2')">Project Writeup and Code</button>
       </div>
       <script>
+      function scrollToSection(sectionId) {
+        document.querySelector(`#${sectionId}`).scrollIntoView({behavior: "smooth"});
+      } 
         async function expandProject(projectId) {
         const projectElement = document.querySelector(`.${projectId}`);
         const projectDescription = projectElement.querySelector('.project-description');
@@ -142,10 +145,10 @@
             console.error('Error fetching code content:', error);
         }
         }
-    </script>    
-    
+      </script>    
+      
 
-  </section>
+    </section>
 
   <section id="reviews">
 
