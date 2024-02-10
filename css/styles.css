@@ -4,7 +4,7 @@ body {
     background-color: rgb(0 0 0/ 60%);
     color: rgb(0 0 0);
     text-align: -webkit-center;
-    background-image: url('background4.jpg'); 
+    background-image: url('/assets/background4.jpg'); 
     background-size: cover; 
     background-position: center; 
     background-blend-mode: soft-light; 
@@ -151,7 +151,7 @@ body {
     background-color: rgb(0 0 0/ 60%);
     color: rgb(0 0 0);
     text-align: -webkit-center;
-    background-image: url('background4.jpg'); 
+    background-image: url('/assets/background4.jpg'); 
     background-size: cover; 
     background-position: center; 
     background-blend-mode: soft-light; 
@@ -288,7 +288,7 @@ body {
     background-color: rgb(0 0 0/ 60%);
     color: rgb(0 0 0);
     text-align: -webkit-center;
-    background-image: url('background4.jpg'); 
+    background-image: url('/assets/background4.jpg'); 
     background-size: cover; 
     background-position: center; 
     background-blend-mode: soft-light; 
