@@ -1,238 +1,239 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <link rel="stylesheet" href="styles.css">
-</head>
+  <head>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
 
-<body>
+  <body>
 
-  <header>
-    <div class="header-content">
-      <h1><a href="#">Moffat Kagiri</a></h1>
-      <div class="buttons-container">
-        <button onclick="scrollToSection('projects')">Projects</button>
-        <button onclick="scrollToSection('reviews')">Reviews</button>
-        <button onclick="scrollToSection('cv')">CV</button>
-        <button onclick="scrollToSection('about')">About</button>
-      </div>
-    </div>
-  </header>
-
-  <section id="projects">
-    
-    <div class="project project1">
-        <h2 onclick="expandProject('project1')">Spatial Data Infrastructures in the Healthcare Sector</h2>
-        <div class="project-details">
-          <p class="project-description">
-            This paper investigates several ways in which Spatial Data Infrastructures can improve service delivery in the
-            health sector. The study conducts a review of the literature in this area and a spatial analysis of the central
-            region in Kenya consisting of the Central and Nairobi provinces. The study finds that SDIs are a critical
-            investment for the improvement of the health sector.
-          </p>
-          <ul class="project-tools">
-            <li>Spatial Data Analysis and Visualization:</li>
-            <p>The paper leverages spatial data analysis and visualization techniques using RStudio. It employs R code to
-              conduct a spatial analysis of the distribution of healthcare facilities in the Central and Nairobi regions of
-              Kenya. The analysis involves mapping the locations of healthcare facilities and population density,
-              demonstrating the current state of the health sector.</p>
-            <li>Literature Review and Data Integration:</li>
-            <p>The study integrates a literature review with spatial data analysis. It builds upon existing studies in the
-              niche of spatial data infrastructures (SDIs) and applies the concepts discussed in the literature to the Kenyan
-              health sector. This data integration aids in developing arguments and supporting conclusions drawn in the
-              paper.</p>
-            <li>RStudio: </li>
-            <p>The paper utilizes RStudio as a data tool to conduct spatial data analysis and visualization. RStudio is
-              employed to write and execute R code for mapping healthcare facilities, population density, and other spatial
-              analyses. It helps in presenting the geographical distribution of health-related data.</p>
-            <li>GIS (Geographic Information Systems): </li>
-            <p>GIS is crucial for mapping and analyzing spatial data, providing insights into the geographic distribution of
-              healthcare facilities, population density, and potential areas for healthcare investments.</p>
-          </ul>
-          <div class="pdf-viewer" id="pdfViewer1"></div>
-          <div class="dark-code-window" id="codePreview1"></div>
+    <header>
+      <div class="header-content">
+        <h1><a href="#">Moffat Kagiri</a></h1>
+        <div class="buttons-container">
+          <button onclick="scrollToSection('projects')">Projects</button>
+          <button onclick="scrollToSection('reviews')">Reviews</button>
+          <button onclick="scrollToSection('cv')">CV</button>
+          <button onclick="scrollToSection('about')">About</button>
         </div>
-        <!-- "Read More" button -->
-        <button class="read-more-button" onclick="showPdfAndCodePreview('project1')">Project Writeup and Code</button>
       </div>
-    
-      <div class="project project2">
-        <h2 onclick="expandProject('project2')">Predictive Analytics in Ecommerce</h2>
-        <div class="project-details">
-          <p class="project-description">
-            E-commerce enterprises seek to increase their revenues by enhancing customer conversion rates on their
-            websites. This study employs predictive analytics and machine learning methodologies to create a model that
-            predicts how a given customer makes a purchase decision during each user session based on a dataset from a case
-            study site. Valuable insights are gleaned through exploratory data analysis of the customer behaviors. Random
-            Forest and Logistic Regression models are used to predict customer conversion.
-          </p>
-          <ul class="project-tools">
-            <li>Exploratory Data Analysis</li>
-            <p>The paper performs extensive exploratory analysis on the ecommerce dataset to understand relationships
-              between variables like visitor behaviors, page types, operating systems etc. This involves statistical
-              analysis and data visualizations.</p>
-            <li>Predictive Modeling</li>
-            <p>The paper applies predictive analytics techniques like logistic regression and random forests to build models
-              that classify user sessions as converting or not, based on session attributes. This involves skills like
-              feature engineering, model tuning, training/testing etc.</p>
-            <li>Model Evaluation</li>
-            <p>Various evaluation metrics are used to assess the predictive models, including accuracy, AUC, confusion
-              matrices, classification reports etc. The ability to critically evaluate models is a key data science
-              skill.</p>
-            <li>Python</li>
-            <p>The data preparation, analysis and modeling work is implemented in Python, leveraging libraries like Pandas,
-              Scikit-learn, Matplotlib etc. Python is a popular tool for data science.</p>
-            <li>Jupyter Notebook</li>
-            <p>The Python code is structured as a Jupyter notebook, which allows combining code, visualizations and
-              documentation in one place. Jupyter is a common notebook environment for data science.</p>
-            <li>CRISP-DM</li>
-            <p>The analysis methodology follows the CRISP-DM framework, which provides a structured approach to data mining
-              projects. CRISP-DM is a popular analytical framework.</p>
-          </ul>
-          <div class="pdf-viewer" id="pdfViewer2"></div>
-          <div class="dark-code-window" id="codePreview2"></div>
+    </header>
+
+    <section id="projects">
+      
+      <div class="project project1">
+          <h2 onclick="expandProject('project1')">Spatial Data Infrastructures in the Healthcare Sector</h2>
+          <div class="project-details">
+            <p class="project-description">
+              This paper investigates several ways in which Spatial Data Infrastructures can improve service delivery in the
+              health sector. The study conducts a review of the literature in this area and a spatial analysis of the central
+              region in Kenya consisting of the Central and Nairobi provinces. The study finds that SDIs are a critical
+              investment for the improvement of the health sector.
+            </p>
+            <ul class="project-tools">
+              <li>Spatial Data Analysis and Visualization:</li>
+              <p>The paper leverages spatial data analysis and visualization techniques using RStudio. It employs R code to
+                conduct a spatial analysis of the distribution of healthcare facilities in the Central and Nairobi regions of
+                Kenya. The analysis involves mapping the locations of healthcare facilities and population density,
+                demonstrating the current state of the health sector.</p>
+              <li>Literature Review and Data Integration:</li>
+              <p>The study integrates a literature review with spatial data analysis. It builds upon existing studies in the
+                niche of spatial data infrastructures (SDIs) and applies the concepts discussed in the literature to the Kenyan
+                health sector. This data integration aids in developing arguments and supporting conclusions drawn in the
+                paper.</p>
+              <li>RStudio: </li>
+              <p>The paper utilizes RStudio as a data tool to conduct spatial data analysis and visualization. RStudio is
+                employed to write and execute R code for mapping healthcare facilities, population density, and other spatial
+                analyses. It helps in presenting the geographical distribution of health-related data.</p>
+              <li>GIS (Geographic Information Systems): </li>
+              <p>GIS is crucial for mapping and analyzing spatial data, providing insights into the geographic distribution of
+                healthcare facilities, population density, and potential areas for healthcare investments.</p>
+            </ul>
+            <div class="pdf-viewer" id="pdfViewer1"></div>
+            <div class="dark-code-window" id="codePreview1"></div>
+          </div>
+          <!-- "Read More" button -->
+          <button class="read-more-button" onclick="showPdfAndCodePreview('project1')">Project Writeup and Code</button>
         </div>
-        <!-- "Read More" button -->
-        <button class="read-more-button" onclick="showPdfAndCodePreview('project2')">Project Writeup and Code</button>
+      
+        <div class="project project2">
+          <h2 onclick="expandProject('project2')">Predictive Analytics in Ecommerce</h2>
+          <div class="project-details">
+            <p class="project-description">
+              E-commerce enterprises seek to increase their revenues by enhancing customer conversion rates on their
+              websites. This study employs predictive analytics and machine learning methodologies to create a model that
+              predicts how a given customer makes a purchase decision during each user session based on a dataset from a case
+              study site. Valuable insights are gleaned through exploratory data analysis of the customer behaviors. Random
+              Forest and Logistic Regression models are used to predict customer conversion.
+            </p>
+            <ul class="project-tools">
+              <li>Exploratory Data Analysis</li>
+              <p>The paper performs extensive exploratory analysis on the ecommerce dataset to understand relationships
+                between variables like visitor behaviors, page types, operating systems etc. This involves statistical
+                analysis and data visualizations.</p>
+              <li>Predictive Modeling</li>
+              <p>The paper applies predictive analytics techniques like logistic regression and random forests to build models
+                that classify user sessions as converting or not, based on session attributes. This involves skills like
+                feature engineering, model tuning, training/testing etc.</p>
+              <li>Model Evaluation</li>
+              <p>Various evaluation metrics are used to assess the predictive models, including accuracy, AUC, confusion
+                matrices, classification reports etc. The ability to critically evaluate models is a key data science
+                skill.</p>
+              <li>Python</li>
+              <p>The data preparation, analysis and modeling work is implemented in Python, leveraging libraries like Pandas,
+                Scikit-learn, Matplotlib etc. Python is a popular tool for data science.</p>
+              <li>Jupyter Notebook</li>
+              <p>The Python code is structured as a Jupyter notebook, which allows combining code, visualizations and
+                documentation in one place. Jupyter is a common notebook environment for data science.</p>
+              <li>CRISP-DM</li>
+              <p>The analysis methodology follows the CRISP-DM framework, which provides a structured approach to data mining
+                projects. CRISP-DM is a popular analytical framework.</p>
+            </ul>
+            <div class="pdf-viewer" id="pdfViewer2"></div>
+            <div class="dark-code-window" id="codePreview2"></div>
+          </div>
+          <!-- "Read More" button -->
+          <button class="read-more-button" onclick="showPdfAndCodePreview('project2')">Project Writeup and Code</button>
+        </div>
+    </section>
+
+    <section id="reviews">
+
+      <p class="paragraph-text">
+          Hello, here are some summaries and critical reviews of articles I have read recently.
+      </p>    
+      
+      <!-- Blog Previews -->
+      <div class="blog-preview" onclick="window.location.href = 'blog1.html'">
+          <h2>Reiews Coming Soon...</h2>
+          <p>First 70 characters of the blog post content go here...</p>
+          <div class="timestamp">01.01.2023 12:00 PM</div>
       </div>
-      <script>
+      
+      <div class="blog-preview" onclick="window.location.href = 'blog2.html'">
+          <h2>Reviews Coming Soon...</h2>
+          <p>First 70 characters of the blog post content go here...</p>
+          <div class="timestamp">02.01.2023 02:30 PM</div>
+      </div>
+      
+      <div class="blog-preview" onclick="window.location.href = 'blog3.html'">
+          <h2>Reviews Coming Soon...</h2>
+          <p>First 70 characters of the blog post content go here...</p>
+          <div class="timestamp">03.01.2023 09:45 AM</div>
+      </div>
+      
+      <button class="more-button" onclick="window.location.href = 'blog.html'">More</button>
+
+    </section>
+
+    <section id="cv">
+
+      <object data="CV.pdf" type="application/pdf" width="80%" height="600px"> </object>
+      <p>In case you don't have a PDF plugin for this browser, no biggie... you can 
+          <a href="CV.pdf" target="_blank">click here to download the PDF file.</a></p>
+
+    </section>
+
+    <section id="about">
+
+      <div class="about-content">
+
+        <img src="headshot.jpg" alt="Moffat Kagiri Headshot">
+
+        <h2>About Me</h2>
+
+        <p class="paragraph-text">
+          I am passionate about leveraging data to drive business strategy. With a
+          strong academic background in actuarial science and work experience in banking,
+          fintech, and consulting. <br>
+          Outside of work, I stay updated on technological advancements in fields like healthcare and
+          human rights. As an avid lifelong learner, I also enjoy biking and working out.
+          I am building my data skills as I seek out opportunities in data science and product management.<br>
+
+          <ul class="bullet-points">
+              <li>Statistical Analysis: Regression, time series analysis, hypothesis testing</li>
+              <li>Data Visualisation: Power BI, Tableau, Matplotlib</li>
+              <li>Programming: Python, R, SQL</li>
+              <li>Data Mining: Web scraping, text analysis, social media analytics</li>
+              <li>Machine Learning: Supervised and unsupervised algorithms, neural networks</li>
+              <li>Financial Modelling: DCF, comparables, LBO models</li>
+              <li>Communication: Presentations, dashboards, reports</li>
+              <li>Leadership: Team mentorship, stakeholder engagement</li>
+              <li>Strategic Thinking: Trend analysis, competitive intelligence</li>
+          </ul>
+        </p>
+
+        <div class="contact-icons">
+          <a href="https://github.com/moffat-kagiri" target="_blank">
+          <img src="github.svg" alt="Github Logo" width="48" height="48">
+          </a>
+          
+          <a href="mailto:kagirimoffat@outlook.com">
+          <img src="email.svg" alt="Email Logo" width="48" height="48">
+          </a>
+          
+          <a href="https://www.linkedin.com/in/moffatkagiri/" target="_blank">
+          <img src="linkedin.svg" alt="LinkedIn Logo" width="48" height="48">
+          </a>
+        </div>
+      </div>
+
+    </section>
+    
+    <script>
       function scrollToSection(sectionId) {
         document.querySelector(`#${sectionId}`).scrollIntoView({behavior: "smooth"});
       } 
-        async function expandProject(projectId) {
+      async function expandProject(projectId) {
         const projectElement = document.querySelector(`.${projectId}`);
         const projectDescription = projectElement.querySelector('.project-description');
         const projectTools = projectElement.querySelector('.project-tools');
-    
-        // Toggle the 'expanded' class
+      
+          // Toggle the 'expanded' class
         projectElement.classList.toggle('expanded');
-    
-        // Toggle project description and tools visibility
+      
+          // Toggle project description and tools visibility
         projectDescription.style.display = projectElement.classList.contains('expanded') ? 'block' : 'none';
         projectTools.style.display = projectElement.classList.contains('expanded') ? 'block' : 'none';
-        }
-    
-        async function showPdfAndCodePreview(projectId) {
+      }
+  
+      async function showPdfAndCodePreview(projectId) {
         const projectElement = document.querySelector(`.${projectId}`);
         const pdfViewer = document.getElementById(`pdfViewer${projectId.charAt(projectId.length - 1)}`);
         const codePreview = document.getElementById(`codePreview${projectId.charAt(projectId.length - 1)}`);
         const projectDescription = projectElement.querySelector('.project-description');
         const projectTools = projectElement.querySelector('.project-tools');
+      }
     
-        // Toggle project description and tools visibility
-        projectDescription.style.display = 'block';
-        projectTools.style.display = 'block';
+      // Toggle project description and tools visibility
+      projectDescription.style.display = 'block';
+      projectTools.style.display = 'block';
     
-        // Fetch the PDF content asynchronously
-        try {
-            const pdfResponse = await fetch(`${projectId}-writeup.pdf`);
-            const pdfBlob = await pdfResponse.blob();
-            pdfViewer.innerHTML = `<embed src="${URL.createObjectURL(pdfBlob)}" type="application/pdf" width="100%" height="500px" />`;
+      // Fetch the PDF content asynchronously
+      try {
+          const pdfResponse = await fetch(`${projectId}-writeup.pdf`);
+          const pdfBlob = await pdfResponse.blob();
+          pdfViewer.innerHTML = `<embed src="${URL.createObjectURL(pdfBlob)}" type="application/pdf" width="100%" height="500px" />`;
+  
+          pdfViewer.style.display = 'block';
+      } 
+      catch (error) {
+          console.error('Error fetching PDF content:', error);
+      }
     
-            pdfViewer.style.display = 'block';
-        } catch (error) {
-            console.error('Error fetching PDF content:', error);
-        }
-    
-        // Fetch the code content asynchronously
-        try {
-            const codeResponse = await fetch(`${projectId}-code.txt`);
-            const codeContent = await codeResponse.text();
-            codePreview.textContent = codeContent;
-    
-            codePreview.style.display = 'block';
-        } catch (error) {
-            console.error('Error fetching code content:', error);
-        }
-        }
-      </script>    
-      
+      // Fetch the code content asynchronously
+      try {
+          const codeResponse = await fetch(`${projectId}-code.txt`);
+          const codeContent = await codeResponse.text();
+          codePreview.textContent = codeContent;
+  
+          codePreview.style.display = 'block';
+      } 
+      catch (error) {
+          console.error('Error fetching code content:', error);
+      }
+    </script> 
 
-    </section>
-
-  <section id="reviews">
-
-    <p class="paragraph-text">
-        Hello, here are some summaries and critical reviews of articles I have read recently.
-    </p>    
-    
-    <!-- Blog Previews -->
-    <div class="blog-preview" onclick="window.location.href = 'blog1.html'">
-        <h2>Reiews Coming Soon...</h2>
-        <p>First 70 characters of the blog post content go here...</p>
-        <div class="timestamp">01.01.2023 12:00 PM</div>
-    </div>
-    
-    <div class="blog-preview" onclick="window.location.href = 'blog2.html'">
-        <h2>Reviews Coming Soon...</h2>
-        <p>First 70 characters of the blog post content go here...</p>
-        <div class="timestamp">02.01.2023 02:30 PM</div>
-    </div>
-    
-    <div class="blog-preview" onclick="window.location.href = 'blog3.html'">
-        <h2>Reviews Coming Soon...</h2>
-        <p>First 70 characters of the blog post content go here...</p>
-        <div class="timestamp">03.01.2023 09:45 AM</div>
-    </div>
-    
-    <button class="more-button" onclick="window.location.href = 'blog.html'">More</button>
-
-  </section>
-
-  <section id="cv">
-
-    <object data="CV.pdf" type="application/pdf" width="80%" height="600px"> </object>
-    <p>In case you don't have a PDF plugin for this browser, no biggie... you can 
-        <a href="CV.pdf" target="_blank">click here to download the PDF file.</a></p>
-
-  </section>
-
-  <section id="about">
-
-    <div class="about-content">
-
-      <img src="headshot.jpg" alt="Moffat Kagiri Headshot">
-
-      <h2>About Me</h2>
-
-      <p class="paragraph-text">
-        I am passionate about leveraging data to drive business strategy. With a
-        strong academic background in actuarial science and work experience in banking,
-        fintech, and consulting. <br>
-        Outside of work, I stay updated on technological advancements in fields like healthcare and
-        human rights. As an avid lifelong learner, I also enjoy biking and working out.
-        I am building my data skills as I seek out opportunities in data science and product management.<br>
-
-        <ul class="bullet-points">
-            <li>Statistical Analysis: Regression, time series analysis, hypothesis testing</li>
-            <li>Data Visualisation: Power BI, Tableau, Matplotlib</li>
-            <li>Programming: Python, R, SQL</li>
-            <li>Data Mining: Web scraping, text analysis, social media analytics</li>
-            <li>Machine Learning: Supervised and unsupervised algorithms, neural networks</li>
-            <li>Financial Modelling: DCF, comparables, LBO models</li>
-            <li>Communication: Presentations, dashboards, reports</li>
-            <li>Leadership: Team mentorship, stakeholder engagement</li>
-            <li>Strategic Thinking: Trend analysis, competitive intelligence</li>
-        </ul>
-      </p>
-
-      <div class="contact-icons">
-        <a href="https://github.com/moffat-kagiri" target="_blank">
-        <img src="github.svg" alt="Github Logo" width="48" height="48">
-        </a>
-        
-        <a href="mailto:kagirimoffat@outlook.com">
-        <img src="email.svg" alt="Email Logo" width="48" height="48">
-        </a>
-        
-        <a href="https://www.linkedin.com/in/moffatkagiri/" target="_blank">
-        <img src="linkedin.svg" alt="LinkedIn Logo" width="48" height="48">
-        </a>
-      </div>
-    </div>
-
-  </section>
-
-</body>
+  </body>
 
 </html>
