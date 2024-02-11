@@ -73,14 +73,12 @@ body {
   
   .about-content {
     display: flex;
-    align-items: center;
+    align-items: left;
     width: 100%;
     background-color: rgba(0, 0, 125, 0.35);
-    padding: 1% 1%;
-    margin: 5% 5%;
+    margin: inherit;
     border-radius: 5px;
     cursor: default; /* Keep arrow cursor */
-    transition: background-color 0.3s ease;
     text-align: left;
     position: relative;
   }
@@ -96,10 +94,6 @@ body {
     top: -7.5%; /* Adjusted position to top right corner */
   }
 
-  .about-content h2 {
-    margin-bottom: 20px;
-    text-align: left;
-  }
   .about-content p {
     text-align: left;
   }
@@ -134,20 +128,19 @@ body {
   }
 
   .contact-icon {
-    font-size: 48px;
+    font-size: 36px;
     margin-bottom: 10px;
     margin-left: 25px;
   }
   .contact-icons {
     display: flex;
     justify-content: flex-end; 
-    width: 25%;
     align-items: center;
     text-emphasis-color: rgba(0, 0, 0)
   }
 
   .contact-icons img {
-    margin-left: 0;
+    margin-left: 25px;
   }
 
   /*Project Sections*/
@@ -177,11 +170,11 @@ body {
   }
 
   .project1 {
-    background-color: rgb(173 216 230 / 50%);
+    background-image: "/assets/project1.jpg";
   }
 
   .project2 {
-    background-color: rgb(255 193 204 / 50%);
+    background-image: "/assets/project2.jpg";
   }
 
   .read-more-button,
