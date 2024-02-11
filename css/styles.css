@@ -10,16 +10,15 @@ body {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    margin: 0%;
+    margin: 5% 5%;
   }
   
   header {
     background-color: rgb(0 0 125 / 30%);
-    color: rgb(0 0 0);
     padding: 2%;
     text-align: center;
     position: relative;
-    width: 90%;
+    width: 100%;
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
   }
   
@@ -36,7 +35,7 @@ body {
   
   .buttons-container {
     display: flex;
-    margin-right: 25px;
+    color: rgb(0 0 0 / 40%);
   }
   .buttons-container button,
   .header-content h1 {
@@ -59,13 +58,12 @@ body {
   }
   
   section {
-    padding: 2%; 
     background-color: rgb(0 0 125 / 20%); 
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     position: relative;
   }
   .paragraph-text {
-    font-size: large; /* Reduced font size */
+    font-size:medium; /* Reduced font size */
     line-height: 1.5; /* Single spaced within paragraphs */
     color: rgb(0 0 0);
     text-align: justify;
@@ -100,6 +98,7 @@ body {
 
   .about-content h2 {
     margin-bottom: 20px;
+    text-align: left;
   }
   .about-content p {
     text-align: left;
@@ -137,6 +136,7 @@ body {
   .contact-icon {
     font-size: 48px;
     margin-bottom: 10px;
+    margin-left: 25px;
   }
   .contact-icons {
     display: flex;
