@@ -1,21 +1,20 @@
 /* CSS styles */
 
 body {
-    background-color: rgb(0 0 0/ 60%);
+    background-color: rgba(255, 255, 255, 0.6);
     color: rgb(0 0 0);
     text-align: -webkit-center;
-    /* background-image: url('/assets/background4.jpg'); */
     background-size: cover; 
     background-position: center; 
     background-blend-mode: soft-light; 
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    margin: 0;
+    margin: 8%;
   }
   
   header {
-    background-color: rgb(0 125 0 / 20%);
+    background-color: rgb(0 125 0 / 30%);
     color: rgb(0 0 0);
     padding: 0;
     text-align: center;
@@ -56,12 +55,13 @@ body {
     font-size: xx-large;
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     text-align: justify;
+    align-content: normal;
 
   }
   
   section {
-    padding: 1%; 
-    background-color: rgb(0 125 0 / 20%); 
+    padding: 2%; 
+    background-color: rgb(125 125 125 / 20%); 
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     position: relative;
   }
@@ -77,10 +77,10 @@ body {
   .about-content {
     width: 90%;
     max-width: 800px;
-    background-color: rgba(169, 169, 169, 0.6);
-    padding: 5% 5%;
+    background-color: rgba(0, 125, 0, 0.6);
+    padding: 1% 1%;
     margin: 5% auto;
-    border-radius: 10px;
+    border-radius: 5px;
     cursor: default; /* Keep arrow cursor */
     transition: background-color 0.3s ease;
     text-align: left;
@@ -94,27 +94,13 @@ body {
     border-radius: 10px;
     position: absolute;
     right: 5%;
-    top: -10%; /* Adjusted position to top right corner */
+    top: -7.5%; /* Adjusted position to top right corner */
   }
 
   .about-content h2 {
     margin-bottom: 20px;
   }
 
-  .signature {
-    font-style: italic;
-    font-size: larger;
-  }
-
-/* New styles for photo captions */
-  .photo-caption {
-    position: absolute;
-    bottom: 150%;
-    right: 5%;
-    transform: translateY(70%);
-    color: #333;
-    font-size: small;
-  }
   .bullet-points{
     text-align: left;
     list-style-type: circle;
@@ -142,75 +128,16 @@ body {
   .contact-icons {
     display: flex;
     justify-content: flex-end; 
+    width: 25%;
+    align-items: center;
+    text-emphasis-color: rgba(0, 0, 0)
   }
 
   .contact-icons img {
     margin-left: 10px;
   }
-  
-  /* Projects styles */
 
-  header {
-    background-color: rgb(0 125 0 / 20%);
-    color: rgb(0 0 0);
-    padding: 0;
-    text-align: center;
-    position: relative;
-    width: 100%;
-    z-index: 1000;
-    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-  }
-  .header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .header-content a {
-    color: inherit;
-    font-size: xx-large;
-    text-decoration: none;
-  }
-
-  .header-content h1 {
-    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    font-size: xx-large;
-    margin-bottom: 0;
-  }
-
-  .buttons-container {
-    display: flex;
-    margin-right: 25px;
-  }
-
-  .buttons-container button,
-  .header-content h1 {
-    margin-left: 25px;
-    margin-right: 25px;
-    padding: 1%;
-    position: relative;
-    background-color: transparent;
-    color: rgb(0 0 0);
-    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    border: none;
-    cursor: pointer;
-  }
-
-  .header-content h2 {
-    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    font-size: x-large;
-    text-align: justify;
-    text-decoration: underline;
-    cursor: pointer;
-  }
-
-  section {
-    background-color: rgb(0 125 0 / 20%);
-    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    position: relative;
-    padding: 20px;
-  }
-
+  /*Project Sections*/
   .project {
     width: 90%;
     max-width: 800px;
@@ -273,56 +200,6 @@ body {
   }
 
   /* Reviews styles */  
-  header {
-    background-color: rgb(0 125 0 / 20%);
-    color: rgb(0 0 0);
-    padding: 0;
-    text-align: center;
-    position: relative;
-    width: 100%;
-    z-index: 1000;
-    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-  }
-  .header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .header-content a {
-    color: inherit;
-    font-size: xx-large;
-  }
-
-  .buttons-container {
-    display: flex;
-    margin-right: 25px;
-  }
-
-  .buttons-container button,
-  .header-content h1 {
-    margin-left: 25px;
-    margin-right: 25px;
-    padding: 1%;
-    position: relative;
-    background-color: rgb(0 0 0 / 00%);
-    color: rgb(0 0 0);
-    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    border: none;
-    cursor: pointer;
-  }
-
-  .header-content h2{
-    font-size: xx-large;
-    text-align: justify;
-  }
-
-  section {
-    padding: 8%; 
-    background-color: rgb(0 125 0 / 20%); 
-    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-  }
-
   .paragraph-text {
     font-size: x-large;
     line-height: 1.5;

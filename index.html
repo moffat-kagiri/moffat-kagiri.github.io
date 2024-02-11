@@ -17,8 +17,57 @@
           <button onclick="scrollToSection('about')">About</button>
         </div>
       </div>
+      <script>
+        // Make header stick on scroll
+        window.onscroll = function() {
+          document.querySelector('header').style.position = 'fixed'; 
+          document.querySelector('header').style.top = '0';
+        }
+      </script>
     </header>
 
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-content">
+
+        <img src="/assets/headshot.jpg" alt="Moffat Kagiri Headshot">
+
+        <h2>About Me</h2>
+
+        <p class="paragraph-text">
+          I am passionate about leveraging data to drive business strategy. With a
+          strong academic background in actuarial science and work experience in banking,
+          fintech, and consulting. <br>
+          Outside of work, I stay updated on technological advancements in fields like healthcare and
+          human rights. As an avid lifelong learner, I also enjoy biking and working out.
+          I am building my data skills as I seek out opportunities in data science and product management.<br>
+
+          <ul class="bullet-points">
+              <li>Statistical Analysis: Regression, time series analysis, hypothesis testing</li>
+              <li>Data Visualisation: Power BI, Tableau, Matplotlib</li>
+              <li>Programming: Python, R, SQL</li>
+              <li>Data Mining: Web scraping, text analysis, social media analytics</li>
+              <li>Machine Learning: Supervised and unsupervised algorithms, neural networks</li>
+          </ul>
+        </p>
+      </div>
+
+      <div class="contact-icons">
+        <a href="https://github.com/moffat-kagiri" target="_blank">
+        <img src="/assets/github.svg" alt="Github Logo" width="48" height="48">
+        </a>
+        
+        <a href="mailto:kagirimoffat@outlook.com">
+        <img src="/assets/email.svg" alt="Email Logo" width="48" height="48">
+        </a>
+        
+        <a href="https://www.linkedin.com/in/moffatkagiri/" target="_blank">
+        <img src="/assets/linkedin.svg" alt="LinkedIn Logo" width="48" height="48">
+        </a>
+      </div>
+
+    </section>
+    
     <section id="projects">
       <h2>Projects</h2>
       <div class="project project1">
@@ -141,82 +190,36 @@
           <a href="/assets/CV.pdf" target="_blank">click here to download the PDF file.</a></p>
 
     </section>
-
-    
-    <section id="about">
-      <h2>About Me</h2>
-      <div class="about-content">
-
-        <img src="/assets/headshot.jpg" alt="Moffat Kagiri Headshot">
-
-        <h2>About Me</h2>
-
-        <p class="paragraph-text">
-          I am passionate about leveraging data to drive business strategy. With a
-          strong academic background in actuarial science and work experience in banking,
-          fintech, and consulting. <br>
-          Outside of work, I stay updated on technological advancements in fields like healthcare and
-          human rights. As an avid lifelong learner, I also enjoy biking and working out.
-          I am building my data skills as I seek out opportunities in data science and product management.<br>
-
-          <ul class="bullet-points">
-              <li>Statistical Analysis: Regression, time series analysis, hypothesis testing</li>
-              <li>Data Visualisation: Power BI, Tableau, Matplotlib</li>
-              <li>Programming: Python, R, SQL</li>
-              <li>Data Mining: Web scraping, text analysis, social media analytics</li>
-              <li>Machine Learning: Supervised and unsupervised algorithms, neural networks</li>
-              <li>Financial Modelling: DCF, comparables, LBO models</li>
-              <li>Communication: Presentations, dashboards, reports</li>
-              <li>Leadership: Team mentorship, stakeholder engagement</li>
-              <li>Strategic Thinking: Trend analysis, competitive intelligence</li>
-          </ul>
-        </p>
-      </div>
-
-      <div class="contact-icons">
-        <a href="https://github.com/moffat-kagiri" target="_blank">
-        <img src="/assets/github.svg" alt="Github Logo" width="48" height="48">
-        </a>
-        
-        <a href="mailto:kagirimoffat@outlook.com">
-        <img src="/assets/email.svg" alt="Email Logo" width="48" height="48">
-        </a>
-        
-        <a href="https://www.linkedin.com/in/moffatkagiri/" target="_blank">
-        <img src="/assets/linkedin.svg" alt="LinkedIn Logo" width="48" height="48">
-        </a>
-      </div>
-
-    </section>
     
     <script>
-      function scrollToSection(sectionId){
-      document.querySelector(`#${sectionId}`).scrollIntoView({behavior: "smooth"});
-      } 
-      async function expandProject(projectId) {
-        const projectElement = document.querySelector(`.${projectId}`);
-        const projectDescription = projectElement.querySelector('.project-description');
-        const projectTools = projectElement.querySelector('.project-tools');
-      
-          // Toggle the 'expanded' class
-        projectElement.classList.toggle('expanded');
-      
-          // Toggle project description and tools visibility
-        projectDescription.style.display = projectElement.classList.contains('expanded') ? 'block' : 'none';
-        projectTools.style.display = projectElement.classList.contains('expanded') ? 'block' : 'none';
+    function scrollToSection(sectionId) {
+      document.querySelector(`#${sectionId}`).scrollIntoView({
+        behavior: "smooth", block: "start"});
       }
-  
-      async function showPdfAndCodePreview(projectId) {
-        const projectElement = document.querySelector(`.${projectId}`);
-        const pdfViewer = document.getElementById(`pdfViewer${projectId.charAt(projectId.length - 1)}`);
-        const codePreview = document.getElementById(`codePreview${projectId.charAt(projectId.length - 1)}`);
-        const projectDescription = projectElement.querySelector('.project-description');
-        const projectTools = projectElement.querySelector('.project-tools');
-      }
+    async function expandProject(projectId) {
+      const projectElement = document.querySelector(`.${projectId}`);
+      const projectDescription = projectElement.querySelector('.project-description');
+      const projectTools = projectElement.querySelector('.project-tools');
     
-      // Toggle project description and tools visibility
-      projectDescription.style.display = 'block';
-      projectTools.style.display = 'block';
+        // Toggle the 'expanded' class
+      projectElement.classList.toggle('expanded');
+    
+        // Toggle project description and tools visibility
+      projectDescription.style.display = projectElement.classList.contains('expanded') ? 'block' : 'none';
+      projectTools.style.display = projectElement.classList.contains('expanded') ? 'block' : 'none';
+    }
+
+    async function showPdfAndCodePreview(projectId) {
+      const projectElement = document.querySelector(`.${projectId}`);
+      const pdfViewer = document.getElementById(`pdfViewer${projectId.charAt(projectId.length - 1)}`);
+      const codePreview = document.getElementById(`codePreview${projectId.charAt(projectId.length - 1)}`);
+      const projectDescription = projectElement.querySelector('.project-description');
+      const projectTools = projectElement.querySelector('.project-tools');
+    // Toggle project description and tools visibility
+    projectDescription.style.display = 'block';
+    projectTools.style.display = 'block';
+    }
+
     
       // Fetch the PDF content asynchronously
       try {
