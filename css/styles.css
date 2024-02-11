@@ -77,7 +77,7 @@ body {
     width: 100%;
     background-color: rgba(0, 0, 125, 0.35);
     padding: 1% 1%;
-    margin: 5% auto;
+    margin: 5% 5%;
     border-radius: 5px;
     cursor: default; /* Keep arrow cursor */
     transition: background-color 0.3s ease;
@@ -87,9 +87,9 @@ body {
 
   .about-content img {
     padding: 10px;
+    margin: inherit;
     width: 50%; /* Enlarged by 50% */
     max-width: 150px;
-    margin-right: 20px;
     border-radius: 10px;
     position: absolute;
     right: 5%;
