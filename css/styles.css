@@ -75,6 +75,8 @@ body {
   /* About styles */
   
   .about-content {
+    display: flex;
+    align-items: center;
     width: 90%;
     max-width: 800px;
     background-color: rgba(0, 125, 0, 0.6);
@@ -91,6 +93,7 @@ body {
     padding: 10px;
     width: 50%; /* Enlarged by 50% */
     max-width: 150px;
+    margin-right: 20px;
     border-radius: 10px;
     position: absolute;
     right: 5%;
@@ -99,6 +102,18 @@ body {
 
   .about-content h2 {
     margin-bottom: 20px;
+  }
+  .about-content p {
+    text-align: left;
+  }
+  @media (max-width: 600px) {
+    .about-content {
+      flex-direction: column;
+    }  
+    .about-content img {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
   }
 
   .bullet-points{
