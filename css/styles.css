@@ -71,12 +71,14 @@ body {
   
   /* About styles */
   
-  .about-content {
-    display: flex;
-    align-items: left;
-    background-color: rgba(0, 0, 125, 0.35);
-    margin: 5% 5%;
-    cursor: default; /* Keep arrow cursor */
+  .about-content{
+    width: 90%;
+    max-width: 800px;
+    padding: 5% 5%;
+    margin: 5% auto;
+    border-radius: 10px;
+    cursor: default;
+    transition: background-color 0.3s ease;
     text-align: left;
     position: relative;
   }
@@ -85,6 +87,7 @@ body {
     padding: 10px;
     margin: inherit;
     width: 50%; /* Enlarged by 50% */
+    height: 150px;
     max-width: 150px;
     border-radius: 10px;
     position: absolute;
@@ -168,11 +171,11 @@ body {
   }
 
   .project1 {
-    background-image: "/assets/project1.jpg";
+    background-image: url("/assets/project1.jpg");
   }
 
   .project2 {
-    background-image: "/assets/project2.jpg";
+    background-image: url("/assets/project2.jpg");
   }
 
   .read-more-button,
