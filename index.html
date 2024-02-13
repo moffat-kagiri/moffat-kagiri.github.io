@@ -14,16 +14,8 @@
           <button onclick="scrollToSection('projects')">Projects</button>
           <button onclick="scrollToSection('reviews')">Reviews</button>
           <button onclick="scrollToSection('cv')">CV</button>
-          
         </div>
       </div>
-      <script>
-        // Make header stick on scroll
-        window.onscroll = function() {
-          document.querySelector('header').style.position = 'fixed'; 
-          document.querySelector('header').style.top = '0';
-        }
-      </script>
     </header>
 
     <section id="about">
@@ -174,6 +166,10 @@
     </section>
     
     <script>
+    window.onscroll = function() {
+      document.querySelector('header').style.position = 'fixed'; 
+      document.querySelector('header').style.top = '0';
+      }
     function scrollToSection(sectionId) {
       document.querySelector(`#${sectionId}`).scrollIntoView({
         behavior: "smooth", block: "start"});
