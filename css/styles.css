@@ -14,9 +14,14 @@ body {
   }
   
   header {
-    position: sticky;
-    top: 0;
-    z-index: 1;
+    background-color: rgb(0 0 125 / 80%);
+    color: rgb(0 0 0);
+    padding: 0;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    z-index: 1000;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
   }
   
   .header-content {
