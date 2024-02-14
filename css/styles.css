@@ -88,8 +88,7 @@ body {
 
   .about-content img {
     padding: 10px;
-    margin: inherit;
-    width: 50%; /* Enlarged by 50% */
+    width: -50%%; /* Enlarged by 50% */
     border-radius: 10px;
     position: absolute;
     right: 5%;
