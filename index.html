@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moffat Kagiri Portfolio</title>
+    <title>Moffat Kagiri - About</title>
     <style>
         body {
             background-color: rgb(0 0 0/ 30%);
@@ -53,7 +53,7 @@
             padding: 1%;
             position: relative;
             margins: 3%;
-            background-color: rgb(0 0 0 /00%);
+            background-color: rgb(0 0 0 / 00%);
             color: rgb(0 0 0);
             font-family: Futura, "Trebuchet MS", Arial, sans-serif;
             border: none;
@@ -66,20 +66,61 @@
         }
         
         section {
-            padding: 8%; 
+            padding: 1%; 
             background-color: rgb(0 125 0 / 20%); 
             font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+            position: relative;
         }
 
         .paragraph-text {
-            font-size: x-large;
-            line-height: 1.5;
+            font-size: large; /* Reduced font size */
+            line-height: 1.5; /* Single spaced within paragraphs */
             color: rgb(0 0 0);
+            text-align: justify;
+            
         }
-        .paragraph-text p{
-            font-size: inherit;
-            padding-right: 50%;
+
+        /* New styles for About page */
+        .about-content {
+            width: 90%;
+            max-width: 800px;
+            background-color: rgba(169, 169, 169, 0.6);
+            padding: 5% 5%;
+            margin: 5% auto;
+            border-radius: 10px;
+            cursor: default; /* Keep arrow cursor */
+            transition: background-color 0.3s ease;
             text-align: left;
+            position: relative;
+        }
+
+        .about-content img {
+            padding: 10px;
+            width: 50%; /* Enlarged by 50% */
+            max-width: 150px;
+            border-radius: 10px;
+            position: absolute;
+            right: 5%;
+            top: -10%; /* Adjusted position to top right corner */
+        }
+
+        .about-content h2 {
+            margin-bottom: 20px;
+        }
+
+        .signature {
+            font-style: italic;
+            font-size: larger;
+        }
+
+        /* New styles for photo captions */
+        .photo-caption {
+            position: absolute;
+            bottom: 150%;
+            right: 5%;
+            transform: translateY(70%);
+            color: #333;
+            font-size: small;
         }
         .bullet-points{
             text-align: left;
@@ -90,7 +131,6 @@
             font-size: inherit;
             position: relative;
         }
-        
         .contact-columns {
             display: flex;
             justify-content: space-around;
@@ -106,12 +146,20 @@
             font-size: 48px;
             margin-bottom: 10px;
         }
+        .contact-icons {
+        display: flex;
+        justify-content: flex-end; 
+        }
+
+        .contact-icons img {
+        margin-left: 10px;
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="header-content">
-            <h1><a href="index.html">Moffat Kagiri<a></h1>
+            <h1><a href="index.html">Moffat Kagiri</a></h1>
             <div class="buttons-container">
                 <button onclick="window.location.href = 'about.html'">About</button>
                 <button onclick="window.location.href = 'projects.html'">Projects</button>
@@ -122,16 +170,33 @@
     </header>
 
     <section>
-        <p class = "paragraph-text">
-            Applying data analytics in banking & finance. Machine learning researcher and student actuary. I make nice playlists. 
-        </p>    
-        <ul class="bullet-points">
-            <li>Predictive Analytics</li>
-            <li>Risk Management</li>
-            <li>Research</li>
-            <li>ML Research</li>
-            <li>Predictive Analytics</li>
-        </ul>
+        <!-- About Content -->
+        <div class="about-content">
+            <img src="headshot.jpg" alt="Moffat Kagiri Headshot">
+            <h2>
+                Machine Learning, R, Data Engineering, Corporate Finance, Art enthusiast.
+            </h2>
+            <p class="paragraph-text">
+                I am passionate about leveraging data to drive business strategy. With a 
+                strong academic background in actuarial science and work experience in banking, 
+                fintech, and consulting, I bring a unique perspective on this subject, 
+                particularly in Kenya and other economies in their growth stage.  <br> 
+                As an avid lifelong learner, I stay updated on technological advancements in 
+                fields like healthcare, politics, and human rights. Outside of work, I enjoy biking 
+                and working out as well as the ocassional art exhibition. I am building my data skills 
+                as I seek out opportunities in data science and product management.<br>
+                
+                Key Skills:
+            <ul class="bullet-points">
+                <li>Statistical Analysis: Regression, time series analysis, hypothesis testing</li>
+                <li>Data Visualisation: Power BI, Tableau, Matplotlib</li>
+                <li>Programming: Python, R, SQL</li>
+                <li>Data Mining: Web scraping, text analysis, social media analytics</li>
+                <li>Machine Learning: Supervised and unsupervised algorithms, neural networks</li>
+                <li>Financial Modelling: DCF, comparables, LBO models</li>
+            </ul>
+            </p>
+        </div>
 
         <div class="contact-columns">
             <div class="contact-column">
@@ -150,7 +215,6 @@
                 </a></p>
             </div>
         </div>
-
     </section>
 </body>
 </html>
