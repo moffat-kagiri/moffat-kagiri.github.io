@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moffat Kagiri - Projects</title>
+  <style>
+        body {
+            background-color: rgb(0 0 0/ 60%);
+            color: rgb(0 0 0);
+            text-align: -webkit-center;
+            background-image: url('background4.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-blend-mode: soft-light; 
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        header {
+            background-color: rgb(0 125 0 / 20%);
+            color: rgb(0 0 0);
+            padding: 0;
+            text-align: center;
+            position: relative;
+            width: 100%;
+            z-index: 1000;
+            font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+        }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-content a {
+      color: inherit;
+      font-size: xx-large;
+      text-decoration: none;
+    }
+
+    .header-content h1 {
+      font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+      font-size: xx-large;
+      margin-bottom: 0;
+    }
+
+    .buttons-container {
+      display: flex;
+      margin-right: 25px;
+    }
+
+    .buttons-container button,
+    .header-content h1 {
+      margin-left: 25px;
+      margin-right: 25px;
+      padding: 1%;
+      position: relative;
+      margins: 3%;
+      background-color: transparent;
+      color: rgb(0 0 0);
+      font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+      border: none;
+      cursor: pointer;
+    }
+
+    .header-content h2 {
+      font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+      font-size: x-large;
+      text-align: justify;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    section {
+      background-color: rgb(0 125 0 / 20%);
+      font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+      position: relative;
+      padding: 20px;
+    }
+
+    .project {
+      width: 90%;
+      max-width: 800px;
+      padding: 5% 5%;
+      margin: 5% auto;
+      border-radius: 10px;
+      cursor: default;
+      transition: background-color 0.3s ease;
+      text-align: left;
+      position: relative;
+    }
+
+    .project h2 {
+      margin-bottom: 20px;
+      text-decoration: underline; /* Underline the clickable project title */
+      cursor: pointer;
+    }
+
+    .project-description,
+    .project-tools,
+    .pdf-viewer,
+    .dark-code-window {
+      display: none;
+    }
+
+    .project1 {
+      background-color: rgb(173 216 230 / 50%);
+    }
+
+    .project2 {
+      background-color: rgb(255 193 204 / 50%);
+    }
+
+    .read-more-button,
+    .code-button {
+      background-color: rgb(76 175 80 / 30%);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 10px auto;
+      cursor: pointer;
+    }
+
+    .dark-code-window {
+      font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+      font-size: 12px;
+      background-color: #222; /* Dark grey background color for code window */
+      color: #fff;
+      overflow: auto;
+      max-height: 300px;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 20px;
+      white-space: pre-wrap; /* Preserve white spaces and respect line breaks */
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <h1><a href="index.html">Moffat Kagiri</a></h1>
+      <div class="buttons-container">
+        <button onclick="window.location.href = 'about.html'">About</button>
+        <button onclick="window.location.href = 'projects.html'">Projects</button>
+        <button onclick="window.location.href = 'reviews.html'">Reviews</button>
+        <button onclick="window.location.href = 'cv.html'">CV</button>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="project project1">
+      <h2 onclick="expandProject('project1')">Spatial Data Infrastructures in the Healthcare Sector</h2>
+      <div class="project-details">
+        <p class="project-description">
+          This paper investigates several ways in which Spatial Data Infrastructures can improve service delivery in the
+          health sector. The study conducts a review of the literature in this area and a spatial analysis of the central
+          region in Kenya consisting of the Central and Nairobi provinces. The study finds that SDIs are a critical
+          investment for the improvement of the health sector.
+        </p>
+        <ul class="project-tools">
+          <li>Spatial Data Analysis and Visualization:</li>
+          <p>The paper leverages spatial data analysis and visualization techniques using RStudio. It employs R code to
+            conduct a spatial analysis of the distribution of healthcare facilities in the Central and Nairobi regions of
+            Kenya. The analysis involves mapping the locations of healthcare facilities and population density,
+            demonstrating the current state of the health sector.</p>
+          <li>Literature Review and Data Integration:</li>
+          <p>The study integrates a literature review with spatial data analysis. It builds upon existing studies in the
+            niche of spatial data infrastructures (SDIs) and applies the concepts discussed in the literature to the Kenyan
+            health sector. This data integration aids in developing arguments and supporting conclusions drawn in the
+            paper.</p>
+          <li>RStudio: </li>
+          <p>The paper utilizes RStudio as a data tool to conduct spatial data analysis and visualization. RStudio is
+            employed to write and execute R code for mapping healthcare facilities, population density, and other spatial
+            analyses. It helps in presenting the geographical distribution of health-related data.</p>
+          <li>GIS (Geographic Information Systems): </li>
+          <p>GIS is crucial for mapping and analyzing spatial data, providing insights into the geographic distribution of
+            healthcare facilities, population density, and potential areas for healthcare investments.</p>
+        </ul>
+        <div class="pdf-viewer" id="pdfViewer1"></div>
+        <div class="dark-code-window" id="codePreview1"></div>
+      </div>
+      <!-- "Read More" button -->
+      <button class="read-more-button" onclick="showPdfAndCodePreview('project1')">Project Writeup and Code</button>
+    </div>
+
+    <div class="project project2">
+      <h2 onclick="expandProject('project2')">Predictive Analytics in Ecommerce</h2>
+      <div class="project-details">
+        <p class="project-description">
+          E-commerce enterprises seek to increase their revenues by enhancing customer conversion rates on their
+          websites. This study employs predictive analytics and machine learning methodologies to create a model that
+          predicts how a given customer makes a purchase decision during each user session based on a dataset from a case
+          study site. Valuable insights are gleaned through exploratory data analysis of the customer behaviors. Random
+          Forest and Logistic Regression models are used to predict customer conversion.
+        </p>
+        <ul class="project-tools">
+          <li>Exploratory Data Analysis</li>
+          <p>The paper performs extensive exploratory analysis on the ecommerce dataset to understand relationships
+            between variables like visitor behaviors, page types, operating systems etc. This involves statistical
+            analysis and data visualizations.</p>
+          <li>Predictive Modeling</li>
+          <p>The paper applies predictive analytics techniques like logistic regression and random forests to build models
+            that classify user sessions as converting or not, based on session attributes. This involves skills like
+            feature engineering, model tuning, training/testing etc.</p>
+          <li>Model Evaluation</li>
+          <p>Various evaluation metrics are used to assess the predictive models, including accuracy, AUC, confusion
+            matrices, classification reports etc. The ability to critically evaluate models is a key data science
+            skill.</p>
+          <li>Python</li>
+          <p>The data preparation, analysis and modeling work is implemented in Python, leveraging libraries like Pandas,
+            Scikit-learn, Matplotlib etc. Python is a popular tool for data science.</p>
+          <li>Jupyter Notebook</li>
+          <p>The Python code is structured as a Jupyter notebook, which allows combining code, visualizations and
+            documentation in one place. Jupyter is a common notebook environment for data science.</p>
+          <li>CRISP-DM</li>
+          <p>The analysis methodology follows the CRISP-DM framework, which provides a structured approach to data mining
+            projects. CRISP-DM is a popular analytical framework.</p>
+        </ul>
+        <div class="pdf-viewer" id="pdfViewer2"></div>
+        <div class="dark-code-window" id="codePreview2"></div>
+      </div>
+      <!-- "Read More" button -->
+      <button class="read-more-button" onclick="showPdfAndCodePreview('project2')">Project Writeup and Code</button>
+    </div>
+  </section>
+
+  <script>
+    async function expandProject(projectId) {
+      const projectElement = document.querySelector(`.${projectId}`);
+      const projectDescription = projectElement.querySelector('.project-description');
+      const projectTools = projectElement.querySelector('.project-tools');
+
+      // Toggle the 'expanded' class
+      projectElement.classList.toggle('expanded');
+
+      // Toggle project description and tools visibility
+      projectDescription.style.display = projectElement.classList.contains('expanded') ? 'block' : 'none';
+      projectTools.style.display = projectElement.classList.contains('expanded') ? 'block' : 'none';
+    }
+
+    async function showPdfAndCodePreview(projectId) {
+      const projectElement = document.querySelector(`.${projectId}`);
+      const pdfViewer = document.getElementById(`pdfViewer${projectId.charAt(projectId.length - 1)}`);
+      const codePreview = document.getElementById(`codePreview${projectId.charAt(projectId.length - 1)}`);
+      const projectDescription = projectElement.querySelector('.project-description');
+      const projectTools = projectElement.querySelector('.project-tools');
+
+      // Toggle project description and tools visibility
+      projectDescription.style.display = 'block';
+      projectTools.style.display = 'block';
+
+      // Fetch the PDF content asynchronously
+      try {
+        const pdfResponse = await fetch(`${projectId}-writeup.pdf`);
+        const pdfBlob = await pdfResponse.blob();
+        pdfViewer.innerHTML = `<embed src="${URL.createObjectURL(pdfBlob)}" type="application/pdf" width="100%" height="500px" />`;
+
+        pdfViewer.style.display = 'block';
+      } catch (error) {
+        console.error('Error fetching PDF content:', error);
+      }
+
+      // Fetch the code content asynchronously
+      try {
+        const codeResponse = await fetch(`${projectId}-code.txt`);
+        const codeContent = await codeResponse.text();
+        codePreview.textContent = codeContent;
+
+        codePreview.style.display = 'block';
+      } catch (error) {
+        console.error('Error fetching code content:', error);
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -6,13 +6,12 @@
     <title>Moffat Kagiri Portfolio</title>
     <style>
         body {
-            background-color: rgb(0 0 0/ 50%);
+            background-color: rgb(0 0 0/ 60%);
             color: rgb(0 0 0);
             text-align: -webkit-center;
-            background-image: url('background4.jpg'); 
+            align-items: center;
             background-size: cover; 
-            background-position: center; 
-            background-blend-mode: soft-light; 
+            background-position: center;
             display: flex;
             justify-content: space-between;
             flex-direction: column;
@@ -53,7 +52,7 @@
             padding: 1%;
             position: relative;
             margins: 3%;
-            background-color: rgb(0 0 0 /00%);
+            background-color: rgb(0 0 0 / 00%);
             color: rgb(0 0 0);
             font-family: Futura, "Trebuchet MS", Arial, sans-serif;
             border: none;
@@ -62,11 +61,11 @@
         
         .header-content h2{
             font-size: xx-large;
-            text-align: justify;
+            text-align: center;
         }
         
         section {
-            padding: 8%; 
+            padding: 5%; 
             background-color: rgb(0 125 0 / 20%); 
             font-family: Futura, "Trebuchet MS", Arial, sans-serif;
         }
@@ -75,43 +74,22 @@
             font-size: x-large;
             line-height: 1.5;
             color: rgb(0 0 0);
+            align-items: center;
         }
         .paragraph-text p{
+            object-position: center;
+            align-content: center;
             font-size: inherit;
             padding-right: 50%;
-            text-align: left;
-        }
-        .bullet-points{
-            text-align: left;
-            list-style-type: circle;
-        }
-
-        .bullet-points li::before {
-            font-size: inherit;
-            position: relative;
+            text-align: center;
         }
         
-        .contact-columns {
-            display: flex;
-            justify-content: space-around;
-        }
-
-        .contact-column {
-            width: 25%;
-            text-align: center;
-            text-emphasis-color: rgba(0, 0, 0)
-        }
-
-        .contact-icon {
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
     </style>
 </head>
 <body>
     <header>
         <div class="header-content">
-            <h1><a href="index.html">Moffat Kagiri<a></h1>
+            <h1><a href="index.html">Moffat Kagiri</a></h1>
             <div class="buttons-container">
                 <button onclick="window.location.href = 'about.html'">About</button>
                 <button onclick="window.location.href = 'projects.html'">Projects</button>
@@ -121,36 +99,8 @@
         </div>
     </header>
 
-    <section>
-        <p class = "paragraph-text">
-            A budding data scientist and student actuary on a quest to redefine the boundaries of anaytical excellence. 
-        </p>    
-        <ul class="bullet-points">
-            <li>Predictive Analytics</li>
-            <li>Risk Management</li>
-            <li>Research</li>
-            <li>ML Research</li>
-            <li>Predictive Analytics</li>
-        </ul>
-
-        <div class="contact-columns">
-            <div class="contact-column">
-                <p><a href="https://github.com/moffat-kagiri" target="_blank">
-                    <img src="github.svg" alt="Github Logo" width="48" height="48">
-                </a></p>
-            </div>
-            <div class="contact-column">
-                <p><a href="mailto:kagirimoffat@outlook.com">
-                    <img src="email.svg" alt="Email Logo" width="48" height="48">
-                </a></p>
-            </div>
-            <div class="contact-column">
-                <p><a href="https://www.linkedin.com/in/moffatkagiri/" target="_blank">
-                    <img src="linkedin.svg" alt="LinkedIn Logo" width="48" height="48">
-                </a></p>
-            </div>
-        </div>
-
-    </section>
+    <!-- Embed a PDF viewer or provide a download link for the resume PDF -->
+    <object data="CV.pdf" type="application/pdf" width="80%" height="600px"> </object>
+    <p>In case you don't have a PDF plugin for this browser, no biggie... you can <a href="CV.pdf" target="_blank">click here to download the PDF file.</a></p>
 </body>
 </html>

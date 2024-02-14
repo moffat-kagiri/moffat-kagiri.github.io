@@ -6,7 +6,7 @@
     <title>Moffat Kagiri Portfolio</title>
     <style>
         body {
-            background-color: rgb(0 0 0/ 50%);
+            background-color: rgb(0 0 0/ 60%);
             color: rgb(0 0 0);
             text-align: -webkit-center;
             background-image: url('background4.jpg'); 
@@ -53,7 +53,7 @@
             padding: 1%;
             position: relative;
             margins: 3%;
-            background-color: rgb(0 0 0 /00%);
+            background-color: rgb(0 0 0 / 00%);
             color: rgb(0 0 0);
             font-family: Futura, "Trebuchet MS", Arial, sans-serif;
             border: none;
@@ -81,37 +81,53 @@
             padding-right: 50%;
             text-align: left;
         }
-        .bullet-points{
-            text-align: left;
-            list-style-type: circle;
-        }
 
-        .bullet-points li::before {
-            font-size: inherit;
+        /* New styles for blog previews */
+        .blog-preview {
+            width: 90%;
+            max-width: 800px;
+            background-color: rgba(169, 169, 169, 0.6);
+            padding: 5% 5% 0 5%;
+            font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+            margin: 5% auto;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
             position: relative;
         }
-        
-        .contact-columns {
-            display: flex;
-            justify-content: space-around;
+
+        .blog-preview:hover {
+            background-color: rgba(169, 169, 169, 0.8);
         }
 
-        .contact-column {
-            width: 25%;
-            text-align: center;
-            text-emphasis-color: rgba(0, 0, 0)
-        }
-
-        .contact-icon {
-            font-size: 48px;
+        .blog-preview h2 {
             margin-bottom: 10px;
+        }
+
+        .timestamp {
+            position: absolute;
+            bottom: 5%;
+            right: 5%;
+            color: #333;
+            font-size: small;
+        }
+
+        .more-button {
+            width: 200px;
+            padding: 1%;
+            background-color: rgb(0 0 0 / 20%);
+            color: rgb(0 0 0);
+            font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+            border: none;
+            cursor: pointer;
+            margin: 20px auto;
         }
     </style>
 </head>
 <body>
     <header>
         <div class="header-content">
-            <h1><a href="index.html">Moffat Kagiri<a></h1>
+            <h1><a href="index.html">Moffat Kagiri</a></h1>
             <div class="buttons-container">
                 <button onclick="window.location.href = 'about.html'">About</button>
                 <button onclick="window.location.href = 'projects.html'">Projects</button>
@@ -122,35 +138,30 @@
     </header>
 
     <section>
-        <p class = "paragraph-text">
-            A budding data scientist and student actuary on a quest to redefine the boundaries of anaytical excellence. 
+        <p class="paragraph-text">
+            Hello, here are some summaries and critical reviews of articles I have read recently.
         </p>    
-        <ul class="bullet-points">
-            <li>Predictive Analytics</li>
-            <li>Risk Management</li>
-            <li>Research</li>
-            <li>ML Research</li>
-            <li>Predictive Analytics</li>
-        </ul>
 
-        <div class="contact-columns">
-            <div class="contact-column">
-                <p><a href="https://github.com/moffat-kagiri" target="_blank">
-                    <img src="github.svg" alt="Github Logo" width="48" height="48">
-                </a></p>
-            </div>
-            <div class="contact-column">
-                <p><a href="mailto:kagirimoffat@outlook.com">
-                    <img src="email.svg" alt="Email Logo" width="48" height="48">
-                </a></p>
-            </div>
-            <div class="contact-column">
-                <p><a href="https://www.linkedin.com/in/moffatkagiri/" target="_blank">
-                    <img src="linkedin.svg" alt="LinkedIn Logo" width="48" height="48">
-                </a></p>
-            </div>
+        <!-- Blog Previews -->
+        <div class="blog-preview" onclick="window.location.href = 'blog1.html'">
+            <h2>Reiews Coming Soon...</h2>
+            <p>First 70 characters of the blog post content go here...</p>
+            <div class="timestamp">01.01.2023 12:00 PM</div>
         </div>
 
+        <div class="blog-preview" onclick="window.location.href = 'blog2.html'">
+            <h2>Reviews Coming Soon...</h2>
+            <p>First 70 characters of the blog post content go here...</p>
+            <div class="timestamp">02.01.2023 02:30 PM</div>
+        </div>
+
+        <div class="blog-preview" onclick="window.location.href = 'blog3.html'">
+            <h2>Reviews Coming Soon...</h2>
+            <p>First 70 characters of the blog post content go here...</p>
+            <div class="timestamp">03.01.2023 09:45 AM</div>
+        </div>
+
+        <button class="more-button" onclick="window.location.href = 'blog.html'">More</button>
     </section>
 </body>
 </html>
