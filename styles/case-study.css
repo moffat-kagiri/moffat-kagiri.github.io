@@ -1,0 +1,106 @@
+/* Case Study Styles */
+.case-study {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.case-study-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.project-meta {
+    color: #666;
+    margin-top: 1rem;
+}
+
+.solution-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.key-metrics, .result-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.metric {
+    text-align: center;
+    padding: 1rem;
+    background: #f5f5f5;
+    border-radius: 8px;
+}
+
+.metric .value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .solution-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .solution-content .visual {
+        order: -1;
+    }
+}
+
+
+.case-study-nav {
+    background: var(--primary);
+    padding: 1rem;
+}
+
+.back-button {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+
+.filter-controls {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.filter-controls button {
+    background: #f0f0f0;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-controls button.active {
+    background: var(--primary);
+    color: white;
+}
+
+
+.interactive-metrics {
+    display: grid;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.metric-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary);
+    transition: color 0.3s ease;
+}
+

@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moffat Kagiri | Data Science Portfolio</title>
+    <title>Moffat Kagiri - Data Science Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header class="hero">
         <div class="container">
             <h1>Moffat Kagiri</h1>
             <p class="tagline">Data Scientist | Financial Optimization Specialist</p>
-            <p class="bio">I build data-driven solutions that empower businesses to make smarter financial decisions...</p>
+            <p class="bio">
+                I build data-driven solutions that empower businesses to make smarter financial decisions...
+            </p>
         </div>
     </header>
 
@@ -19,64 +22,62 @@
         <div class="container">
             <h2>Impact in Numbers</h2>
             <div class="metrics-grid">
-                <div class="metric">
-                    <div class="metric-value">95%</div>
-                    <div class="metric-label">Fraud Detection Accuracy</div>
+                <div class="metric" data-value="95">
+                    <div class="metric-value">0%</div>
+                    <div class="metric-label">Accuracy</div>
                 </div>
-                <div class="metric">
-                    <div class="metric-value">10k+</div>
+                <div class="metric" data-value="10000">
+                    <div class="metric-value">0</div>
                     <div class="metric-label">Transactions Analyzed</div>
                 </div>
-                <div class="metric">
-                    <div class="metric-value">40%</div>
+                <div class="metric" data-value="40">
+                    <div class="metric-value">0%</div>
                     <div class="metric-label">Cost Reduction</div>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <section class="project-showcase">
         <div class="container">
             <h2>Project Showcase</h2>
-            
-            <!-- Fraud Detection -->
-            <div class="showcase-card">
-                <div class="showcase-content">
-                    <h3>Fraud Detection System</h3>
-                    <div class="tech-stack">
-                        <span>Python</span>
-                        <span>XGBoost</span>
-                        <span>SHAP</span>
-                        <span>Streamlit</span>
-                    </div>
-                    <p class="description">
-                        Developed a machine learning system that detects fraudulent transactions with 95% accuracy. 
-                        Implemented explainable AI using SHAP values for transparent decision-making.
-                    </p>
-                    <div class="project-links">
-                        <a href="https://github.com/moffat-kagiri/Fraud-Detection-using-Machine-Learning" class="code-link">
-                            View Code
-                        </a>
-                        <a href="#" class="case-study-link">
-                            Case Study
-                        </a>
-                    </div>
-                </div>
-                <div class="showcase-visual">
-                    <img src="images/fraud-detection-preview.png" alt="Fraud Detection Preview">
-                </div>
+            <div class="filter-controls">
+                <button data-filter="all" class="active">All Projects</button>
+                <button data-filter="finance">Finance</button>
+                <button data-filter="ml">Machine Learning</button>
+                <button data-filter="analytics">Analytics</button>
             </div>
-    
-            <!-- Repeat for other projects -->
+
+            <!-- Include all project cards here -->
+            <div class="project-card" data-category="finance ml">
+                <!-- Fraud Detection Content -->
+            </div>
+            
+            <div class="project-card" data-category="finance analytics">
+                <!-- Expense Tracker Content -->
+            </div>
+            
+            <div class="project-card" data-category="finance automation">
+                <!-- MPESA Analyzer Content -->
+            </div>
+            
+            <div class="project-card" data-category="ml analytics">
+                <!-- Sentiment Analysis Content -->
+            </div>
+            
+            <div class="project-card" data-category="analytics">
+                <!-- Kwanza Tukule Content -->
+            </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
             <a href="https://github.com/moffat-kagiri" class="cta-button">Explore My GitHub</a>
-            <p>📧 kagirimoffat@outlook.com</p>
-            <p>📞 +254 740294373</p>
+            <p>📧 moffat@example.com</p>
         </div>
     </footer>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
