@@ -122,3 +122,40 @@ body {
     border: 2px solid var(--primary);
     color: var(--primary);
 }
+
+/* Image Sizing */
+.showcase-visual img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .showcase-card {
+        grid-template-columns: 1fr;
+    }
+    
+    .showcase-visual {
+        order: -1;
+        margin-bottom: 1.5rem;
+    }
+
+    .showcase-visual img {
+        max-width: 100%;
+    }
+}
+
+/* Spacing */
+.showcase-card {
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.showcase-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
