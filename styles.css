@@ -1,0 +1,48 @@
+:root {
+    --primary: #1a472a;  /* Dark emerald */
+    --secondary: #2c5f2d;  /* Forest green */
+    --accent: #d4af37;  /* Gold accent */
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+}
+
+.hero {
+    background: var(--primary);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.project-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.project-card {
+    border: 1px solid #e0e0e0;
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.tech {
+    color: var(--secondary);
+    font-weight: 500;
+    margin: 0.8rem 0;
+}
+
+.cta-button {
+    background: var(--accent);
+    color: white !important;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+}
